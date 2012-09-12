@@ -1,0 +1,35 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="deu.contentypes">
+
+  <!-- Ensure Plone's portlets ZCML has already been processed;
+       without this, we may get a permission lookup error -->
+  <include package="plone.app.portlets" />
+
+	<!-- -*- extra stuff goes here -*- -->
+  <plone:portlet
+    name="deu.empresas"
+    interface=".empresas.IPortletEmpresa"
+    assignment=".empresas.Assignment"
+    renderer=".empresas.Renderer"
+    addview=".empresas.AddForm"
+    editview=".empresas.EditForm"
+    />
+  <plone:portlet
+    name="deu.comentario"
+    interface=".comentario.IPortletComentario"
+    assignment=".comentario.Assignment"
+    renderer=".comentario.Renderer"
+    addview=".comentario.AddForm"
+    editview=".comentario.EditForm"
+    />
+  <plone:portlet
+    name="deu.banco"
+    interface=".banco.IPortletBanco"
+    assignment=".banco.Assignment"
+    renderer=".banco.Renderer"
+    addview=".banco.AddForm"
+    editview=".banco.EditForm"
+    />
+</configure>

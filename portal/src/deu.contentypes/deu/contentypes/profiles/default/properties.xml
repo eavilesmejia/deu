@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<site>
+ <property name="title">Vicerrectoria de Investigacion y Desarrollo Direccion de Extension Universitaria</property>
+ <property name="description"></property>
+ <property name="selectable_views" type="lines">
+  <element value="folder_listing"/>
+  <element value="news_listing"/>
+ </property>
+ <property name="email_from_address" type="string"></property>
+ <property name="email_from_name" type="string"></property>
+ <property name="validate_email" type="boolean">False</property>
+ <property name="email_charset" type="string">utf-8</property>
+ <property name="enable_permalink" type="boolean">False</property>
+ <property name="captcha_key" type="string">82525872</property>
+ <property name="layout" type="string">frontpage</property>
+</site>

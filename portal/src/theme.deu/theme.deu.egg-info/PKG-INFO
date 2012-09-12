@@ -1,0 +1,25 @@
+Metadata-Version: 1.0
+Name: theme.deu
+Version: 1.0
+Summary: Skin para Direccion de Extensiones UNI
+Home-page: http://deu.googlecode.com/svn/trunk/theme.deu
+Author: deu@uni.edu.ni
+Author-email: deu@uni.edu.ni
+License: GPL
+Description: Introduction
+        ============
+        
+        
+        
+        Changelog
+        =========
+        
+        1.0dev (unreleased)
+        -------------------
+        
+        - Initial release
+        
+Keywords: web zope plone theme
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python

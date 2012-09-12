@@ -1,0 +1,18 @@
+<a href=""
+   tal:attributes="href python:context.portal_url() + '/registro';
+                   title string: Agregar personal">
+
+    <img src="" alt=""
+         tal:attributes="src context/++resource++registro.gif;
+                         alt string:Registro"
+    />
+</a>
+
+<a href=""
+ tal:attributes="href python:context.portal_url() + '/bolsa-de-empleo' + '/createObject?type_name=Solicitud+de+Personal'">
+  <img src="" alt="" title=""
+       tal:attributes="src context/++resource++solicita.jpg;
+                       alt string:Solicita tu Personal;
+                       title string:Solicita tu Personal"/>
+</a>
+

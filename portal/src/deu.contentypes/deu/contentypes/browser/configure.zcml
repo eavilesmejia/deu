@@ -1,0 +1,64 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="deu.contentypes">
+
+  <include package="plone.app.contentmenu" />
+  <include package="plone.app.z3cform" />
+
+<!-- configuracion para el registro de empresas -->
+    <browser:page
+        for="*"
+        name="registro"
+        class=".registroEmpresas.registroForm"
+        permission="zope2.View"
+        />
+
+<!-- vistas para los arquetipos -->
+    <browser:page
+        for="..interfaces.ISolicituddePersonal"
+        name="view"
+        class=".arquetipos.SPersonal"
+        permission="zope2.View"
+        />
+    <browser:page
+        for="..interfaces.ICurriculum"
+        name="view"
+        class=".arquetipos.Curriculum"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.IComment"
+        name="view"
+        class=".arquetipos.Comentario"
+        permission="zope2.View"
+        />
+
+
+<!--recursos del portal -->
+
+    <browser:resource
+      name="actualiza.gif"
+      image="images/actualiza.gif"
+      />
+
+    <browser:resource
+      name="comentario.gif"
+      image="images/comentario.gif"
+      />
+
+    <browser:resource
+      name="registro.gif"
+      image="images/registro.gif"
+      />
+
+    <browser:resource
+      name="solicita.jpg"
+      image="images/bannersolicitatupersonal.jpg"
+      />
+
+
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>

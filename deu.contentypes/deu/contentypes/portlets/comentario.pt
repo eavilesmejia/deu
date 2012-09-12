@@ -1,0 +1,7 @@
+<a tal:attributes="href python:context.portal_url() + '/comentarios' + '/createObject?type_name=Comentario';
+                   class string:link-overlay">
+
+    <img src=" "
+         tal:attributes="src context/++resource++comentario.gif;
+                         alt string:Agrega tu Comentario"/>
+</a>

@@ -1,0 +1,42 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="deu.contentypes">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  <class class=".solicituddepersonal.SolicituddePersonal">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.ISolicituddePersonal"
+        />
+    <require
+        permission="cmf.ModifyPortalContent"
+        interface="..interfaces.ISolicituddePersonal"
+        />
+  </class>
+
+  <class class=".bancocv.Curriculum">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.ICurriculum"
+        />
+    <require
+        permission="cmf.ModifyPortalContent"
+        interface="..interfaces.ICurriculum"
+        />
+  </class>
+
+  <class class=".comentario.Comentario">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IComment"
+        />
+    <require
+        permission="cmf.ModifyPortalContent"
+        interface="..interfaces.IComment"
+        />
+  </class>
+
+</configure>

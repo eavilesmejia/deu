@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="theme.deu">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Skin para Direccion de Extensiones UNI"
+      directory="profiles/default"
+      description='Extension profile for the "Skin para Direccion de Extensiones UNI" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="theme.deu.various"
+      title="Skin para Direccion de Extensiones UNI: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="theme.deu.setuphandlers.setupVarious">
+    <depends name="skins"/>
+  </genericsetup:importStep>
+
+</configure>

@@ -1,0 +1,55 @@
+<div id="plone-portalfooter" class="row">
+    <div id="blogs">
+        <dl tal:define="items view/ultimosBlogs"
+            tal:condition="items">
+            <dt>Participa en nuestros Blogs</dt>
+            <dd tal:repeat="item items">
+                <tal:inner define="title item/pretty_title_or_id|nothing;
+                                   url item/getURL|item/absolute_url|nothing;">
+                    <a tal:content="title"
+                       tal:attributes="href url;
+                                       alt title;
+                                       title title"
+                      />
+                </tal:inner>
+            </dd>
+        </dl>
+    </div>
+
+    <div id="encuestas">
+        <dl tal:define="encuestas view/encuestas"
+            tal:condition="encuestas">
+            <dt>Encuestas</dt>
+            <dd tal:repeat="encuesta encuestas">
+                <tal:inner define="title encuesta/pretty_title_or_id|nothing;
+                                   url encuesta/getURL|encuesta/absolute_url|nothing">
+                          <a href="#"
+                             tal:attributes="href url"
+                            tal:content="title"/>
+                </tal:inner>
+            </dd>
+
+        </dl>
+    </div>
+
+    <div id="comentarios">
+        <dl tal:define="comentarios view/comentarios"
+            tal:condition="comentarios">
+            <dt>Tus comentarios</dt>
+            <dd tal:repeat="comentario comentarios">
+                <tal:inner define="title comentario/pretty_title_or_id;
+                                   url comentario/getURL|comentario/absolute_url|nothing">
+                          <a href="#"
+                             tal:content="title"
+                             tal:attributes="href url"/>
+                </tal:inner>
+            </dd>
+        </dl>
+    </div>
+
+    <span id="redes-sociales">
+        <a href="#">
+            <img src="" tal:attributes="src python:context.portal_url()+'/redes.jpg'"/>
+        </a>
+    </span>
+</div>

@@ -1,0 +1,4 @@
+# svn propset svn:externals -F EXTERNALS.txt .
+
+theme.deu https://deu.googlecode.com/svn/trunk/theme.deu
+deu.contentypes https://deu.googlecode.com/svn/trunk/deu.contentypes

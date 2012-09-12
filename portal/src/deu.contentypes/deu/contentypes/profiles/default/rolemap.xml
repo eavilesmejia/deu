@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <!-- -*- extra stuff goes here -*- -->
+    <permission name="deu.contentypes: Add Curriculum" acquire="True">
+      <role name="Anonymous" />
+      <role name="Manager" />
+    </permission>
+    <permission name="deu.contentypes: Add Solicitud de Personal" acquire="False">
+      <role name="Manager" />
+      <role name="Member" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="deu.contentypes: Add Comentario" acquire="False">
+      <role name="Anonymous" />
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+  </permissions>
+</rolemap>

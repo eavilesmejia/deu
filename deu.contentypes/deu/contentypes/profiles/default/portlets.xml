@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!-- This file is used to register new types of portlets. It can also
+     be used to register completely new column types. See CMFPlone's version
+     of this file for more information.
+  -->
+<portlets
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone">
+    <portlet
+        addview="deu.empresas"
+        title="Portlet Empresa"
+        description="Muestra los banner para empresas"
+    />
+
+    <portlet
+        addview="deu.comentario"
+        title="Portlet Comentario"
+        description="Muestra los banner para Comentario"
+    />
+    <portlet
+        addview="deu.banco"
+        title="Portlet Curriculum"
+        description="Muestra los banner para Banco de Curriculum"
+    />
+    <assignment
+        purge="True"
+        manager="plone.rightcolumn"
+        category="context"
+        key="/"
+        />
+    <assignment
+        purge="True"
+        manager="plone.leftcolumn"
+        category="context"
+        key="/"
+        />
+    <assignment
+        name="empresas"
+        category="context"
+        key="/"
+        manager="plone.leftcolumn"
+        type="deu.empresas"
+        visible="True"
+        />
+    <assignment
+        name="banco"
+        category="context"
+        key="/"
+        manager="plone.leftcolumn"
+        type="deu.banco"
+        visible="True"
+        />
+    <assignment
+        name="comentario"
+        category="context"
+        key="/"
+        manager="plone.leftcolumn"
+        type="deu.comentario"
+        visible="True"
+        />
+  <!-- -*- extra stuff goes here -*- -->
+</portlets>

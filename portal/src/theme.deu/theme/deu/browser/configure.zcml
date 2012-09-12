@@ -1,0 +1,94 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="theme.deu">
+
+  <interface
+      interface=".interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="Skin para Direccion de Extensiones UNI"
+      />
+
+<!-- Registry Directories -->
+  <browser:resourceDirectory
+      name="theme.deu.images"
+      directory="images"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <browser:resourceDirectory
+      name="theme.deu.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <browser:resourceDirectory
+      name="theme.deu.javascripts"
+      directory="javascripts"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <browser:resourceDirectory
+      name="theme.deu.templates"
+      directory="templates"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+<!-- Front Page -->
+
+    <browser:page
+        name="frontpage"
+        for="*"
+        class=".frontPage.frontView"
+        template="templates/frontpage.html"
+        permission="zope.Public"
+        />
+
+<!-- Custom viewlet -->
+
+    <browser:viewlet
+        name="menu.actions"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class="plone.app.layout.viewlets.common.SiteActionsViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+    <browser:viewlet
+        name="menu.path_bar"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".viewlets.pathBar"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+    <browser:viewlet
+        name="plone.logo"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.logoViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <browser:viewlet
+        name="plone.footer"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".viewlets.footerView"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+<!-- Agregando Nuestro recursos Javascripts -->
+<browser:resource
+    name="Jquerydeu.js"
+    file="javascripts/jquery-1.5.1.min.js"
+    />
+
+<browser:resource
+    name="popupdeu.js"
+    file="javascripts/popup.js"
+    />
+
+</configure>

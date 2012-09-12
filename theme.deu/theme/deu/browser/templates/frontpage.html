@@ -1,0 +1,133 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master">
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+      <div metal:fill-slot="main">
+          <div id="intro">
+              <h2>
+                  Visi&oacute;n
+              </h2>
+              <p>
+                  La Direcci&oacute;n de Extensi&oacute;n es una instancia consolidada como lider en el desarrollo
+                  de acciones sostenibles de asistencia al sector Pb&uacute;lico, Privado y Comunitario, mediante un
+               modelo que contribuye a la solucion de problemas prioritaios del entrono y aporta a la formacion integral
+               de la comuidad universitaria
+
+               </p>
+               <h2>
+                   Misi&oacute;n
+               </h2>
+              <p>
+                  La Direcci&oacute;n de Extensi&oacute;n es la instacia de la Vicerrector&iacute;a de Investigaci&oacute;n y Desarrollo de  la Universidad
+                  la Universidad Nacional de Ingenir&iacute;a responsable de involucrar a la Comunidad Universitaria en el desarrollo y articulaci&oacute;n
+                  de acciones sostenibles de asistencia al sectro p&uacute;blico, privado y comunitario.
+              </p>
+          </div>
+          <div tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+              <div id="noticias" tal:define="noticias view/news"
+                                 tal:condition="noticias">
+                  <h3>Ultimas Noticias</h3>
+                <div class="innerContent" tal:repeat="noticia noticias">
+                    <tal:inner define="title noticia/pretty_title_or_id|nothing;
+                                       url noticia/getURL|noticia/absolute_url()|nothing;
+                                       descripcion noticia/Description;
+                                       fecha noticia/ModificationDate;
+                                       itemEffective noticia/effective/ISO|noticia/EffectiveDate|nothing;
+                                       object noticia/getObject|nothing">
+                            <a href="#"
+                               tal:attributes="href url" class="imageFront">
+                                <img src="" alt=""
+                                     tal:condition="exists:object/image_tile"
+                                     tal:replace="structure python: path('nocall:object/tag')(scale='tile', css_class='tileImage')"/>
+                            </a>
+                             <h4 class="bodyFront">
+                                 <a href="#"
+                                    tal:attributes="href url"
+                                    tal:content="title"/>
+                             </h4>
+                        <p class="tileFront">
+                            <a name="fb_share" type="icon_link" style="width:55px; height: 20px;"
+                                           share_url="YOUR_URL"
+                                           tal:attributes="share_url url">&nbsp;</a>
+                            <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"
+                                    type="text/javascript">
+                            </script>
+                            <span class="custom-tweet-button">
+                                <script type="text/javascript"
+                                        src="http://platform.twitter.com/widgets.js">
+                                </script>
+                                <a href="http://twitter.com/share"
+                                   class="twitter-share-button"
+                                   data-count="none"
+                                   data-url="http://dev.twitter.com/pages/tweet_button"
+                                   data-via="your_screen_name"
+                                   data-text="Checking out this page about Tweet Buttons"
+                                   data-related="anywhere:The Javascript API"
+                                   tal:attributes="data-url url"
+                                   >&nbsp;</a>
+                            </span>
+                        </p>
+                            <span class="effectiveDate" tal:content="python:'Fecha Publicacion: ' + toLocalizedTime(fecha,long_format=1)"/>
+                            <span tal:content="descripcion"/>
+
+                            <p><a href="#"
+                               tal:attributes="href url"
+                               tal:content="string:>> leer todo."/>
+                            </p>
+                    </tal:inner>
+                </div>
+                <a class="allNews"
+                   tal:attributes="href python:context.absolute_url()+'/noticias'"
+                   tal:content="string:ver Todas"/>
+              </div>
+              <div id="bolsa">
+                  <h3>Bolsa de Empleo</h3>
+                  <ul class="innerContent" tal:define="bolsas view/bolsa;
+                                                       pas_member context/@@pas_member">
+                      <li tal:repeat="item bolsas"
+                          >
+                          <tal:inner define="title item/pretty_title_or_id;
+                                             creador item/Creator;
+                                             autor python:pas_member.info(creador);
+                                             email autor/email|autor/getEmail|nothing;
+                                             telefono autor/telefono|autor/getTelefono|nothing;
+                                             url item/getURL|item/absolute_url()|nothing;
+                                             object item/getObject;
+                                             contrato object/getTipo|object/tipo|nothing;
+                                             fechaini object/getFecha|object/fecha|nothing;
+                                             fechafin object/getFechafin|object/fecchafin|nothing;
+                                             ">
+                          <a tal:content="title"
+                             tal:attributes="href item/getURL|item/item/absolute_url|nothing"/>
+                          <span tal:content="string:Empresa: ${creador}"/>
+                          <span tal:content="python:'Inicio Entrevistas: ' + toLocalizedTime(fechaini,long_format=1)"
+                             tal:condition="python:fechaini"/>
+                          <span tal:content="python:'Fin Entrevistas: ' + toLocalizedTime(fechafin,long_format=1)"/>
+                          <span tal:content="string:Tipo de contrato: ${contrato}"
+                             tal:condition="python:contrato"/>
+                          <span tal:content="string:Telefono: ${telefono}"
+                             tal:condition="python:telefono"/>
+                          <span tal:content="string:Correo: ${email}"
+                             tal:condition="python:email"/>
+
+                          </tal:inner>
+                      </li>
+                  </ul>
+                  <a href="#"
+                     tal:attributes="href python:context.absolute_url()+'/bolsa-de-empleo'"
+                     tal:content="string:ver Todas"/>
+              </div>
+          </div>
+      </div>
+  </body>
+</html>

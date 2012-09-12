@@ -1,0 +1,17 @@
+
+<a href=""
+    tal:attributes="href python:context.portal_url() + '/bancocurriculum' + '/createObject?type_name=Curriculum';
+                    "
+   style="cursor:pointer;"
+    >
+    <img src="" alt=""
+         tal:attributes="src context/++resource++actualiza.gif;
+                         alt string:Actualiza tus datos"/>
+</a>
+
+<script type="text/javascript">
+
+   jq('.link-averlay').prepOverlay({
+
+    });
+</script>

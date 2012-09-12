@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- This file holds the setup configuration of the viewlet managers
+     for the "Skin para Direccion de Extensiones UNI" skin.
+     -->
+
+<object>
+
+  <!-- Viewlets keep the same ordering than the default skin ('Plone Default'
+       out of the box).
+       You can specify skinname="*" if you want changes apply for all skins.
+       Using "True"" for the 'make-default' parameter will make the 'skinname'
+       value set as default skinname. Means the name of the skin that would be
+       used in case the viewlets ordering was not specified for the currently
+       used skin.
+       The 'based-on' attribute lets you inherit the viewlets ordering from an
+       existing skin.
+       -->
+
+  <order manager="plone.portalheader" skinname="Skin para Direccion de Extensiones UNI"
+         based-on="Plone Default">
+          <viewlet name="plone.personal_bar"/>
+          <viewlet name="menu.actions"/>
+          <viewlet name="plone.searchbox"/>
+          <viewlet name="plone.logo"/>
+          <viewlet name="plone.global_sections"/>
+  </order>
+
+  <order manager="plone.portalfooter" skinname="Skin para Direccion de Extensiones UNI"
+         based-on="Plone Default">
+        <viewlet name="plone.footer"
+                 insert-before="*" />
+        <viewlet name="plone.colophon"
+            />
+  </order>
+
+  <order manager="plone.abovecontent" skinname="Skin para Direccion de Extensiones UNI"
+         based-on="Plone Default">
+        <viewlet name="menu.path_bar"/>
+  </order>
+
+<!--Ocultar Viewlets -->
+
+  <hidden manager="plone.abovecontent" skinname="Skin para Direccion de Extensiones UNI">
+    <viewlet name="plone.path_bar"/>
+  </hidden>
+
+  <hidden manager="plone.portalfooter" skinname="Skin para Direccion de Extensiones UNI">
+    <viewlet name="plone.colophon" />
+    <viewlet name="plone.site_actions"/>
+  </hidden>
+
+</object>

@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="simpleblog"
+    >
+    <include package=".browser" />
+    <cmf:registerDirectory
+        name="skins"
+        directory="skins"
+        recursive="True"
+        />
+
+    <five:deprecatedManageAddDelete
+        class=".content.blog.Blog" />
+    <five:deprecatedManageAddDelete
+        class=".content.blogentry.BlogEntry" />
+    <five:deprecatedManageAddDelete
+        class=".content.blogfolder.BlogFolder" />
+
+    <include file="profiles.zcml" />
+
+</configure>

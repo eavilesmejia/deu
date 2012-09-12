@@ -1,0 +1,143 @@
+body{
+}
+
+#titulo{
+    display: inline;
+    margin-left: 1em;
+    position: absolute;
+    color: #444444;
+    top: 1.5em;
+}
+#portal-siteactions{
+    position: absolute;
+    right: 5em;
+}
+
+#visual-portal-wrapper{
+    width: 1024px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+    #portal-globalnav .selected a, #portal-globalnav a:hover{
+     background: none repeat scroll 0 0 #010080;
+}
+
+/******** FRONT PAGE *********/
+#noticias{
+    width: 360px;
+    border: 1px solid #ccc;
+    float: left;
+    -moz-border-radius-topleft: 0.8em;
+    -moz-border-radius-topright: 0.8em;
+    -moz-border-radius-bottomleft: 0.5em;
+    -moz-border-radius-bottomright: 0.5em;
+    
+}
+#noticias h3{
+    background-color: #75AD0A;
+    border: 0.25em solid #75AD0A;
+    color:#FFF;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    padding-top: 0.05em;
+    height: 13px;
+    -moz-border-radius-topleft: 0.5em;
+    -moz-border-radius-topright: 0.5em;
+}
+
+#bolsa{
+    float: left;
+    width: 360px;
+    border: 1px solid #ccc;
+    -moz-border-radius-topleft: 0.8em;
+    -moz-border-radius-topright: 0.8em;
+    -moz-border-radius-bottomleft: 0.5em;
+    -moz-border-radius-bottomright: 0.5em;
+
+}
+#bolsa h3{
+    background-color: #75AD0A;
+    border: 0.25em solid #75AD0A;
+    color:#FFF;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    padding-top: 0.05em;
+    height: 13px;
+    -moz-border-radius-topleft: 0.5em;
+    -moz-border-radius-topright: 0.5em;
+}
+
+.innerContent{
+    position: relative;
+    padding: 1em;
+}
+
+.innerContent a,
+.innerContent a:visited{
+    border: none !important;
+    
+}
+.imageFront{
+    float: left;
+}
+.bodyFront{
+    float: left;
+    display: inline;
+}
+
+.effectiveDate{
+    color:#a3a1a1;
+}
+
+.tileFront{
+    margin-bottom: 0.5em !important;
+}
+.allNews{
+    float: right;
+}
+
+#bolsa span{
+    display: block;
+}
+.innerContent li{
+    list-style: square;
+}
+
+#plone-portalfooter{
+    margin-top: 2em;
+    padding: 2em;
+    position: relative;
+    background-color: #75AD0A;
+    -moz-border-radius-topleft: 0.8em;
+    -moz-border-radius-topright: 0.8em;
+    -moz-border-radius-bottomleft: 0.5em;
+    -moz-border-radius-bottomright: 0.5em;
+}
+
+#plone-portalfooter div{
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+/*    float: left;*/
+}
+#plone-portalfooter dl dt{
+    color:#fff;
+    font-weight: bold;
+}
+#plone-portalfooter dl dd{
+    margin-top: 5px;
+    list-style: circle;
+}
+
+#plone-portalfooter dl dd a{
+/*    border-bottom: 1px #fff dotted;*/
+    list-style: circle;
+    margin-top: 10px;
+}
+
+#redes-sociales{
+    position: absolute;
+    right: 4em;
+}
